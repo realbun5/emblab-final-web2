@@ -1,23 +1,7 @@
-"use client";
-
-import Image from "next/image";
-import Graph from "../components/graph";
-import { useEffect, useState } from "react";
-import { fetchData } from "../backend/firebase";
+import StatusGraph from "../components/StatusGraph";
+import { useState } from "react";
 
 export default function Home() {
-    const [data, setData] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-        setIsLoading(true);
-        fetchData().then((data) => {
-            setData(data);
-            setIsLoading(false);
-        });
-    }, []);
-
-    console.log({ data });
     return (
         <main>
             {/* top bar */}
@@ -42,7 +26,7 @@ export default function Home() {
                 </div>
             </div>
             {/* graph */}
-            <Graph data={data} />
+            <StatusGraph />
         </main>
     );
 }
