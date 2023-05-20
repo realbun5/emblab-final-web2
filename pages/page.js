@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Graph from "../components/graph";
 import { useEffect, useState } from "react";
-import { fetchData } from "../backend/firebase";
+import { fetchData } from "@/backend/firebase";
 
 export default function Home() {
     const [data, setData] = useState(null);
