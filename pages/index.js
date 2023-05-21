@@ -3,12 +3,12 @@ import { useState } from "react";
 
 export default function Home() {
     return (
-        <main>
+        <main className="bg-[#C6C6C6]">
             {/* top bar */}
-            <div>
-                <h1>Plant Meter</h1>
+            <div className="bg-[#255c2a]">
+                <h1 className="flex justify-center font-sans py-5 text-5xl text-white"> Plant Meter </h1>
             </div>
-            <div className="flex">
+            <div className="flex gap-5 justify-center py-4 font-sans">
                 {/* overall status */}
                 <div>
                     <h2>Overall status</h2>
