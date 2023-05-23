@@ -3,25 +3,25 @@ import { useState } from "react";
 
 export default function Home() {
     return (
-        <main className="bg-[#C6C6C6]">
+        <main className="bg-[#e3e3e3] h-100%">
             {/* top bar */}
             <div className="bg-[#255c2a]">
-                <h1 className="flex justify-center font-sans py-5 text-5xl text-white"> Plant Meter </h1>
+                <h1 className="flex justify-center font-sans py-5 text-5xl text-white"> Plantmeter </h1>
             </div>
-            <div className="flex gap-5 justify-center py-4 font-sans">
-                {/* overall status */}
-                <div>
-                    <h2>Overall status</h2>
-                </div>
-                {/* stats */}
-                <div>
-                    <h2>Stats</h2>
-                    <h3>last update: --/--/--:--.--</h3>
-                    <div>
-                        <p>Temperature: 00</p>
-                        <p>Humidity: 00</p>
-                        <p>Soil Moisture: 00</p>
-                        <p>Light intensity: 00</p>
+            <div className="px-7">
+                <h1 className="flex justify-left font-sans pt-4 pb-2 text-4xl text-black"> Dashboard </h1>
+                <div className="flex gap-5 justify-center pb-4 font-sans">
+                    {/* overall status */}
+                    <div className="w-5/12 h-64 flex flex-col flex-wrap">
+                        <h2 className="bg-[#d6aa0f] flex justify-center font-sans text-2xl text-wihte">Overall Status: ...</h2>
+                    </div>
+                    {/* stats */}
+                    <div className="w-5/12 h-64 flex flex-col flex-wrap">
+                        <h2 className="bg-[#255c2a] flex justify-center items-center font-sans text-2xl text-white flex-grow">⏰ Last update: --/--/--:--.--</h2>
+                        <p className="text-2xl bg-[#c6c6c6] flex flex-grow items-center">Air Temperature: 00</p>
+                        <p className="text-2xl bg-[#dadada] flex flex-grow items-center">Air Humidity: 00</p>
+                        <p className="text-2xl bg-[#c6c6c6] flex flex-grow items-center">Soil Humidity: 00</p>
+                        <p className="text-2xl bg-[#dadada] flex flex-grow items-center">Light Intensity: 00</p>
                     </div>
                 </div>
             </div>
