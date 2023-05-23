@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import LineChart from "./LineChart";
-import { testData } from "@/test/testGraphData";
 import { fetchData } from "@/backend/firebase";
 import { useQuery } from "@tanstack/react-query";
 
@@ -28,7 +27,6 @@ async function getData() {
 
 export default function StatusGraph() {
     const [graphDataType, setGraphDataType] = useState("temp");
-    // const [isLoading, setIsLoading] = useState(false);
     const [time, setTime] = useState(60 * 60);
 
     const { data, isLoading, error } = useQuery({
