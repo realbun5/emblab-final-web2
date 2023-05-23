@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import LineChart from "./LineChart";
 import { testData } from "@/test/testGraphData";
+import { fetchData } from "@/backend/firebase";
+import { useQuery } from "@tanstack/react-query";
 
 const TIME_PER_DATA = [
     {
@@ -19,12 +21,22 @@ const TIME_PER_DATA = [
 
 const GRAPH_DATA_TYPES = ["temp", "humid", "soilHumid", "lightLevel"];
 
+async function getData() {
+    const data = await fetchData();
+    return data;
+}
+
 export default function StatusGraph() {
     const [graphDataType, setGraphDataType] = useState("temp");
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
     const [time, setTime] = useState(60 * 60);
 
-    const data = testData;
+    const { data, isLoading, error } = useQuery({
+        queryKey: ["data"],
+        queryFn: getData,
+    });
+
+    if (isLoading) return <div>Loading...</div>;
     data.sort((a, b) => a.time - b.time);
     return (
         <div className="mx-auto max-w-3xl">

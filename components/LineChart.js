@@ -68,7 +68,7 @@ function getGraphData(data, type, timeRange) {
 
     data.forEach((d) => {
         for (let i = 0; i < labels.length - 1; i++) {
-            if (labels[i] <= d.time && d.time < labels[i + 1]) {
+            if (labels[i] <= d.timestamp && d.timestamp < labels[i + 1]) {
                 graphData[i] = d[type];
                 // break;
             }
