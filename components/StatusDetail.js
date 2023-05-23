@@ -29,22 +29,22 @@ export default function StatusDetail() {
             <p className="text-2xl bg-[#c6c6c6] flex flex-grow items-center">
                 {`Air Temperature: ${
                     isLoading ? "Loading..." : data[data.length - 1].temp
-                }`}
+                } °C`}
             </p>
             <p className="text-2xl bg-[#dadada] flex flex-grow items-center">
                 {`Air Humidity: ${
                     isLoading ? "Loading..." : data[data.length - 1].humid
-                }`}
+                } %`}
             </p>
             <p className="text-2xl bg-[#c6c6c6] flex flex-grow items-center">
                 {`Soil Humidity: ${
                     isLoading ? "Loading..." : data[data.length - 1].soilHumid
-                }`}
+                } %`}
             </p>
             <p className="text-2xl bg-[#dadada] flex flex-grow items-center">
                 {`Light Intensity: ${
                     isLoading ? "Loading..." : data[data.length - 1].lightLevel
-                }`}
+                } %`}
             </p>
         </div>
     );

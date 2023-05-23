@@ -5,6 +5,12 @@ import { Line } from "react-chartjs-2";
 ChartJS.register(...registerables);
 
 const TIME_STEP = 10 * 60;
+const displayName = {
+    temp: "Air Temperature",
+    humid: "Air Humidity",
+    soilHumid: "Soil Humidity",
+    lightLevel: "Light Intensity"
+}
 
 const options = {
     responsive: true,
@@ -23,7 +29,7 @@ const options = {
 export default function LineChart({ data, type, time }) {
     return (
         <div className="bg-[white]">
-            <h1 className="text-2xl py-1 px-2">{`Status chart:${type}`}</h1>
+            <h1 className="text-2xl py-1 px-2 text-center">{`${displayName[type]}`}</h1>
             <Line
                 options={options}
                 data={{
