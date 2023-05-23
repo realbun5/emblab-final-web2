@@ -12,10 +12,6 @@ const options = {
         legend: {
             display: false,
         },
-        title: {
-            display: true,
-            text: "status chart",
-        },
     },
     scales: {
         y: {
@@ -26,7 +22,8 @@ const options = {
 
 export default function LineChart({ data, type, time }) {
     return (
-        <div>
+        <div className="bg-[white]">
+            <h1 className="text-2xl py-1 px-2">{`Status chart:${type}`}</h1>
             <Line
                 options={options}
                 data={{

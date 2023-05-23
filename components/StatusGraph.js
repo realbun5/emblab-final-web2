@@ -6,16 +6,16 @@ import { useQuery } from "@tanstack/react-query";
 
 const TIME_PER_DATA = [
     {
-        label: "hour",
-        time: 60 * 60,
+        label: "W",
+        time: 7 * 24 * 60 * 60,
     },
     {
-        label: "day",
+        label: "D",
         time: 24 * 60 * 60,
     },
     {
-        label: "week",
-        time: 7 * 24 * 60 * 60,
+        label: "H",
+        time: 60 * 60,
     },
 ];
 
@@ -39,10 +39,10 @@ export default function StatusGraph() {
     if (isLoading) return <div>Loading...</div>;
     data.sort((a, b) => a.time - b.time);
     return (
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl py-5">
             <LineChart data={data} type={graphDataType} time={time} />
-            <div className="flex justify-between">
-                <div className="flex">
+            <div className="flex justify-between mt-[10px]">
+                <div className="flex justify-between gap-2">
                     {GRAPH_DATA_TYPES.map((m) => (
                         <GraphOptionButton
                             key={m}
@@ -52,7 +52,7 @@ export default function StatusGraph() {
                         </GraphOptionButton>
                     ))}
                 </div>
-                <div className="flex">
+                <div className="flex justify-between gap-2">
                     {TIME_PER_DATA.map((t) => (
                         <GraphOptionButton
                             key={t.label}
@@ -70,7 +70,7 @@ export default function StatusGraph() {
 function GraphOptionButton({ onClick, children }) {
     return (
         <button
-            className="border-2 border-black rounded-md p-1 m-1"
+            className="min-w-[50px] bg-gray-300 py-2 px-2 text-lg font-bold text-black hover:bg-gray-400 transition duration-100 ease-in-outs"
             onClick={onClick}
         >
             {children}
