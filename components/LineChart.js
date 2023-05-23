@@ -34,6 +34,7 @@ export default function LineChart({ data, type, time }) {
                             data: getGraphData(data, type, time),
                             spanGaps: true,
                             tension: 0.1,
+                            pointRadius: 0,
                         },
                     ],
                 }}
