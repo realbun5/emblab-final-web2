@@ -50,10 +50,18 @@ function getLabels(timeRange) {
     const timeFrom = timeTo - timeRange;
     const labels = Array(Math.floor(timeRange / TIME_STEP))
         .fill(0)
-        .map(
-            (_, i) => new Date((timeFrom + i * TIME_STEP) * 1000).toISOString()
-            // TODO: timezone issue+  format date
-        );
+        .map((_, i) => {
+            const date = new Date((timeFrom + i * TIME_STEP) * 1000);
+            return (
+                date.toLocaleDateString("th-TH") +
+                " " +
+                date
+                    .toLocaleTimeString("th-TH")
+                    .split(":")
+                    .slice(0, 2)
+                    .join(":")
+            );
+        });
     return labels;
 }
 
