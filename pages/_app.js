@@ -10,10 +10,13 @@ export default function App({ Component, pageProps }) {
         <QueryClientProvider client={queryClient}>
             <Head>
                 <title>Plantmeter</title>
-                <link href="https://fonts.googleapis.com/css2?family=Aleo&display=swap" rel="stylesheet" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Aleo&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
             <Component {...pageProps} />
-            <ReactQueryDevtools initialIsOpen={false} />
+            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </QueryClientProvider>
     );
 }
