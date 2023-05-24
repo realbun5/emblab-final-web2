@@ -18,8 +18,8 @@ export default function StatusDetail() {
     }
 
     return (
-        <div className="w-5/12 h-64 flex flex-col flex-wrap">
-            <h2 className="bg-[#255c2a] flex justify-center items-center font-sans text-2xl text-white flex-grow">
+        <div className="w-5/12 h-auto flex flex-col flex-wrap">
+            <h2 className="bg-[#255c2a] flex justify-center items-center text-2xl text-white flex-grow">
                 {`⏰ Last update: ${
                     isLoading
                         ? "Loading..."
