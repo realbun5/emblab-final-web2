@@ -9,8 +9,8 @@ const displayName = {
     temp: "Air Temperature",
     humid: "Air Humidity",
     soilHumid: "Soil Humidity",
-    lightLevel: "Light Intensity"
-}
+    lightLevel: "Light Intensity",
+};
 
 const options = {
     responsive: true,
@@ -22,14 +22,26 @@ const options = {
     scales: {
         y: {
             beginAtZero: true,
+            ticks: {
+                font: {
+                    family: "aleo",
+                },
+            },
+        },
+        x: {
+            ticks: {
+                font: {
+                    family: "Aleo",
+                },
+            },
         },
     },
 };
 
 export default function LineChart({ data, type, time }) {
     return (
-        <div className="bg-[white]">
-            <h1 className="text-2xl py-1 px-2 text-center">{`${displayName[type]}`}</h1>
+        <div className="bg-[white] p-4">
+            <h1 className="text-2xl py-1 px-2 text-center font-aleo">{`${displayName[type]}`}</h1>
             <Line
                 options={options}
                 data={{
