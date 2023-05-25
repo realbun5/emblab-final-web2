@@ -3,8 +3,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Credits
 
 Chanathip Kittikaiwan 6431310221
+
 Poonyawee Wongsrisujarit 6431330821
+
 Natchanon Mongkoltananont 6432047421
+
 Panat Chindanuwat 6432101621
 
 ## Getting Started
