@@ -106,7 +106,7 @@ export default function OverAllStatus() {
                 className={`${
                     isLoading
                         ? ""
-                        : color_score[getTempScore(data[data.length - 1].temp)]
+                        : color_score[getTotalScore(data, isLoading)]
                 } 
             flex flex-grow justify-center items-center font-aleo text-black text-md md:text-lg lg:text-xl xl:text-2xl`}
             >
