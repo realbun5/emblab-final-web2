@@ -2,6 +2,9 @@ import { fetchData } from "@/backend/firebase";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Image from "next/image";
+import { getTempScore, getHumidScore, getLightLevelScore, getSoilHumidScore } from "@/components/OverAllStatus";
+
+const color_score = {1: "bg-[#dc2626]", 2: "bg-[#fde047]", 3: "bg-[#bef264]"};
 
 async function getData() {
     const data = await fetchData();
@@ -22,7 +25,7 @@ export default function StatusDetail() {
         <div className="w-5/12 h-auto flex flex-col flex-wrap text-md md:text-lg lg:text-xl xl:text-2xl">
             <h2 className="bg-[#255c2a] flex justify-center items-center text-white flex-grow">
                 <Image
-                    className="mx-2"
+                    className={`mx-2`}
                     src={"/clock.png"}
                     width={25}
                     height={25}
@@ -36,7 +39,7 @@ export default function StatusDetail() {
             </h2>
             <p className="bg-[#c6c6c6] flex flex-grow items-center pl-2">
                 <Image
-                    className="mr-2"
+                    className={`mr-2 ${isLoading ? "" : color_score[getTempScore(data[data.length - 1].temp)]}`}
                     src={"/temp.png"}
                     width={25}
                     height={25}
@@ -48,7 +51,7 @@ export default function StatusDetail() {
             </p>
             <p className="bg-[#dadada] flex flex-grow items-center pl-2">
                 <Image
-                    className="mr-2"
+                    className={`mr-2 ${isLoading ? "" : color_score[getHumidScore(data[data.length - 1].humid)]}`}
                     src={"/waterdrop.png"}
                     width={25}
                     height={25}
@@ -60,7 +63,7 @@ export default function StatusDetail() {
             </p>
             <p className="bg-[#c6c6c6] flex flex-grow items-center pl-2">
                 <Image
-                    className="mr-2"
+                    className={`mr-2 ${isLoading ? "" : color_score[getSoilHumidScore(data[data.length - 1].soilHumid)]}`}
                     src={"/plant.png"}
                     width={25}
                     height={25}
@@ -72,7 +75,7 @@ export default function StatusDetail() {
             </p>
             <p className="bg-[#dadada] flex flex-grow items-center pl-2">
                 <Image
-                    className="mr-2"
+                    className={`mr-2 ${isLoading ? "" : color_score[getLightLevelScore(data[data.length - 1].lightLevel)]}`}
                     src={"/sun.png"}
                     width={25}
                     height={25}

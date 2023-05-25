@@ -8,13 +8,6 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps }) {
     return (
         <QueryClientProvider client={queryClient}>
-            <Head>
-                <title>Plantmeter</title>
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Aleo&display=swap"
-                    rel="stylesheet"
-                />
-            </Head>
             <Component {...pageProps} />
             {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </QueryClientProvider>
