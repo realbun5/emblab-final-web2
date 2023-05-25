@@ -106,7 +106,7 @@ export default function StatusDetail() {
                             : color_score[
                                   getLightLevelScore(
                                       data[data.length - 1].lightLevel,
-                                      data[data.length - 1].time
+                                      data[data.length - 1].timestamp
                                   )
                               ]
                     }`}
