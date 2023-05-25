@@ -21,7 +21,8 @@ export default function StatusDetail() {
     return (
         <div className="w-5/12 h-auto flex flex-col flex-wrap text-md md:text-lg lg:text-xl xl:text-2xl">
             <h2 className="bg-[#255c2a] flex justify-center items-center text-white flex-grow">
-                <Image className="mx-2"
+                <Image
+                    className="mx-2"
                     src={"/clock.png"}
                     width={25}
                     height={25}
@@ -34,7 +35,8 @@ export default function StatusDetail() {
                 }`}
             </h2>
             <p className="bg-[#c6c6c6] flex flex-grow items-center pl-2">
-                <Image className="mr-2"
+                <Image
+                    className="mr-2"
                     src={"/temp.png"}
                     width={25}
                     height={25}
@@ -45,7 +47,8 @@ export default function StatusDetail() {
                 } °C`}
             </p>
             <p className="bg-[#dadada] flex flex-grow items-center pl-2">
-                <Image className="mr-2"
+                <Image
+                    className="mr-2"
                     src={"/waterdrop.png"}
                     width={25}
                     height={25}
@@ -56,7 +59,8 @@ export default function StatusDetail() {
                 } %`}
             </p>
             <p className="bg-[#c6c6c6] flex flex-grow items-center pl-2">
-                <Image className="mr-2"
+                <Image
+                    className="mr-2"
                     src={"/plant.png"}
                     width={25}
                     height={25}
@@ -67,7 +71,8 @@ export default function StatusDetail() {
                 } %`}
             </p>
             <p className="bg-[#dadada] flex flex-grow items-center pl-2">
-                <Image className="mr-2"
+                <Image
+                    className="mr-2"
                     src={"/sun.png"}
                     width={25}
                     height={25}
