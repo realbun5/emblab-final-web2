@@ -62,7 +62,7 @@ export function getSoilHumidScore(soilHumid) {
 }
 
 export function getLightLevelScore(lightLevel, time) {
-    const hour = new Date(time).getHours();
+    const hour = new Date(time * 1000).getHours();
     if (hour <= 6 || hour >= 18) {
         return 3;
     }
@@ -83,7 +83,7 @@ function getTotalScore(data, isLoading) {
         getSoilHumidScore(data[data.length - 1].soilHumid) +
         getLightLevelScore(
             data[data.length - 1].lightLevel,
-            data[data.length - 1].time
+            data[data.length - 1].timestamp
         );
     if (score >= 10) return 3;
     else if (score >= 7) return 2;
