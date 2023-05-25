@@ -20,6 +20,7 @@ const overall_rating = {
     3: "Vital",
 };
 const overall_pic = {
+    0: "/plant.png",
     1: "/overall_1.png",
     2: "/overall_2.png",
     3: "/overall_3.png",
@@ -84,8 +85,8 @@ function getTotalScore(data, isLoading) {
             data[data.length - 1].lightLevel,
             data[data.length - 1].time
         );
-    if (score >= 9) return 3;
-    else if (score >= 5) return 2;
+    if (score >= 10) return 3;
+    else if (score >= 7) return 2;
     return 1;
 }
 
