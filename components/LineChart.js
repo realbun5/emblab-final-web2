@@ -84,9 +84,9 @@ function getLabels(timeRange) {
 }
 
 function getGraphData(data, type, timeRange) {
-    const timeTo = Math.floor(Date.now() / 1000) + TIME_STEP;
+    const timeTo = Math.floor(Date.now() / 1000);
     const timeFrom = timeTo - timeRange;
-    const labels = Array(Math.floor(timeRange / TIME_STEP))
+    const labels = Array(Math.floor(timeRange / TIME_STEP) + 1)
         .fill(0)
         .map((_, i) => timeFrom + i * TIME_STEP);
 
@@ -96,7 +96,7 @@ function getGraphData(data, type, timeRange) {
         for (let i = 0; i < labels.length - 1; i++) {
             if (labels[i] <= d.timestamp && d.timestamp < labels[i + 1]) {
                 graphData[i] = d[type];
-                // break;
+                break;
             }
         }
     });
