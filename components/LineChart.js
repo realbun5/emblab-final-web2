@@ -48,11 +48,13 @@ export default function LineChart({ data, type, time }) {
                     labels: getLabels(time),
                     datasets: [
                         {
-                            label: type,
+                            label: displayName[type],
                             data: getGraphData(data, type, time),
                             spanGaps: true,
                             tension: 0.1,
-                            pointRadius: 0,
+                            pointRadius: 3,
+                            pointBackgroundColor: "rgba(0, 0, 0, 0)",
+                            pointBorderColor: "rgba(0, 0, 0, 0)",
                         },
                     ],
                 }}
